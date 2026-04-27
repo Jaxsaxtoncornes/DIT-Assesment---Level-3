@@ -8,16 +8,24 @@ class Items:
 class Inventory:
     def __init__(self, parent):
 
+        button1 = Button(parent, text="Buy/Sell Products", command=self.press1)
+        button1.pack()
 
-        self.label1 = Label(parent, text="Buy/Sell Products", font=("Arial", 14))
-        self.label1.pack(pady=10)
+        button2 = Button(parent, text="Update/Remove Products", command=self.press2)
+        button2.pack()  
 
-        self.label2 = Label(parent, text="Update/Remove Products", font=("Arial", 14))
-        self.label2.pack(pady=10)
+        button3 = Button(parent, text="Search", command=self.press3)
+        button3.pack()
 
-        self.label3 = Label(parent, text="Search", font=("Arial", 14))
-        self.label3.pack(pady=10)
+    def press1(self):
+         print("Buy/Sell Products")
 
+    
+    def press2(self):
+            print("Update/Remove Products")
+    
+    def press3(self):
+            print("Search")
 
 
 if __name__ == "__main__":
