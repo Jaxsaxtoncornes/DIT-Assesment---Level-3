@@ -26,7 +26,6 @@ class Inventory:
     def press1(self):
          print("Buy/Sell Products")
 
-    
     def press2(self):
             print("Update/Remove Products")
     
