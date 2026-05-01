@@ -8,7 +8,7 @@ class Items:
 class Inventory:
     def __init__(self, parent):
 
-        self.label1 = Label(parent, text="Inventory Tracker", fg="Black", bg='olive', font=("Roboto", 20, "bold"))
+        self.label1 = Label(parent, text="Inventory Tracker", fg="Black", bg='green', font=("Roboto", 20, "bold"))
         self.label1.pack(pady=10)
 
         button1 = Button(parent, text="Buy/Sell Products", relief="flat", borderwidth=0, highlightthickness=0, command=self.press1)
@@ -37,5 +37,5 @@ if __name__ == "__main__":
     root = Tk()
     root.title("Inventory Tracker")
     app = Inventory(root)
-    root.configure(bg='olive')
+    root.configure(bg='green')
     root.mainloop()
