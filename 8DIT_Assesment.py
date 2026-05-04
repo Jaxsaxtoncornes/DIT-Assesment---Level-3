@@ -19,12 +19,12 @@ class Inventory:
         Label(self.parent, text="Inventory Tracker", bg="green", font=("Roboto", 20, "bold")).pack(pady=10)
 
         Button(self.parent, text="Add Item", command=self.add_item).pack()
-        Button(self.parent, text="View Items", command=self.view_items).pack()
-        Button(self.parent, text="Search", command=self.search_screen).pack()
+        #Button(self.parent, text="View Items", command=self.view_items).pack()
+        #Button(self.parent, text="Search", command=self.search_screen).pack()
 
     def add_item(self):
 
-        Label(self.parent, text="Add Item").pack(
+        Label(self.parent, text="Add Item").pack()
 
         name_entry = Entry(self.parent)
         name_entry.pack()
@@ -32,7 +32,7 @@ class Inventory:
         price_entry = Entry(self.parent)
         price_entry.pack()
 
-        catergory_entry = Entry(self.parent)
+        category_entry = Entry(self.parent)
         category_entry.pack()
         
         stock_entry = Entry(self.parent)
