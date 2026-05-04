@@ -1,6 +1,6 @@
 from tkinter import *
 
-class Items:
+class Items: #Has all the categorys for the products that will be added
     def __init__(self, name, price, category, stock):
         self.name = name
         self.price = price
