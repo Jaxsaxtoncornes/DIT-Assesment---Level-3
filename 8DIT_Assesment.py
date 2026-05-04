@@ -9,6 +9,8 @@ class Items:
 
 class Inventory:
     def __init__(self, parent):
+        self.parent = parent
+        self.products_list = []
 
         self.label1 = Label(parent, text="Inventory Tracker", fg="Black", bg='green', font=("Roboto", 20, "bold"))
         self.label1.pack(pady=10)
