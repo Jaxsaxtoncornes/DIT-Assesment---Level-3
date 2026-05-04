@@ -12,22 +12,21 @@ class Inventory:
         self.parent = parent
         self.products_list = []
 
-        self.label1 = Label(parent, text="Inventory Tracker", fg="Black", bg='green', font=("Roboto", 20, "bold"))
-        self.label1.pack(pady=10)
+        self.main_menu()
 
-        button1 = Button(parent, text="Update/Remove Products", relief="flat", borderwidth=0, highlightthickness=0, command=self.press1)
-        button1.config(bg="gray")
-        button1.pack()  
+    def main_menu(self):
+            
+        Label(self.parent, text="Inventory Tracker", bg="green", font=("Roboto", 20, "bold")).pack(pady=10)
 
-        button2 = Button(parent, text="Search", relief="flat", borderwidth=0, highlightthickness=0, command=self.press2)
-        button2.config(bg="gray")
-        button2.pack()
+        Button(self.parent, text="Add Item", command=self.add_item).pack()
+        Button(self.parent, text="View Items", command=self.view_items).pack()
+        Button(self.parent, text="Search", command=self.search_screen).pack()
 
-    def press1(self):
-            print("Update/Remove Products")
-    
-    def press2(self):
-            print("Search")
+    def add_item(self):
+
+
+
+
 
 
 if __name__ == "__main__":
