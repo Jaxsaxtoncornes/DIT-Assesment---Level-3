@@ -28,7 +28,15 @@ class Inventory:
 
         name_entry = Entry(self.parent)
         name_entry.pack()
+
+        price_entry = Entry(self.parent)
+        price_entry.pack()
+
+        catergory_entry = Entry(self.parent)
+        category_entry.pack()
         
+        stock_entry = Entry(self.parent)
+        stock_entry.pack()
 
 
 
