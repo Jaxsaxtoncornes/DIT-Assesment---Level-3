@@ -39,10 +39,6 @@ class Inventory:
         stock_entry.pack()
 
 
-
-
-
-
 if __name__ == "__main__":
     root = Tk()
     root.title("Inventory Tracker")
