@@ -24,6 +24,12 @@ class Inventory:
 
     def add_item(self):
 
+        Label(self.parent, text="Add Item").pack(
+
+        name_entry = Entry(self.parent)
+        name_entry.pack()
+        
+
 
 
 
