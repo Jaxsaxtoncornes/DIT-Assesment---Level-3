@@ -1,8 +1,10 @@
 from tkinter import *
 
 class Items:
-    def __init__(self, product, stock):
-        self.product = product
+    def __init__(self, name, price, category, stock):
+        self.name = name
+        self.price = price
+        self.category = category
         self.stock = stock
 
 class Inventory:
