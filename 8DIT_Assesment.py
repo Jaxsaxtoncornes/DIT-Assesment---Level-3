@@ -90,7 +90,7 @@ class Inventory:
         search_entry.pack()
 
         def search():
-            keyword = search_entry.get()
+            keyword = search_entry.get().lower()
 
             for item in self.products_list:
                 if item.name == keyword:
