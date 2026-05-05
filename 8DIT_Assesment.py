@@ -91,10 +91,15 @@ class Inventory:
 
         def search():
             keyword = search_entry.get().lower()
+            found = False
 
             for item in self.products_list:
                 if item.name == keyword:
                     print("Found:", item.name)
+                    found = True
+
+            if found == False:
+                print("No item in inventory")
 
         Button(self.parent, text="Search", command=search).pack()
         Button(self.parent, text="Back", command=self.main_menu).pack()
