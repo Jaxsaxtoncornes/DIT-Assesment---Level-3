@@ -84,7 +84,7 @@ class Inventory:
     def search_screen(self):
         self.clear_screen()
 
-        Label(self.parent, text="Search For Product").pack()
+        Label(self.parent, text="Search by product name").pack()
 
         search_entry = Entry(self.parent)
         search_entry.pack()
