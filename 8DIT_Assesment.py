@@ -32,15 +32,19 @@ class Inventory:
 
         Label(self.parent, text="Add Item").pack()
 
+        Label(self.parent, text="Item Name:").pack()
         name_entry = Entry(self.parent)
         name_entry.pack()
 
+        Label(self.parent, text="Price:").pack()
         price_entry = Entry(self.parent)
         price_entry.pack()
 
+        Label(self.parent, text="Category:").pack()
         category_entry = Entry(self.parent)
         category_entry.pack()
         
+        Label(self.parent, text="Stock:").pack()
         stock_entry = Entry(self.parent)
         stock_entry.pack()
 
