@@ -63,8 +63,12 @@ class Inventory:
                 print("Please fill out all fields")
                 return
 
-            price = float(price) # Converts strings to numbers, changes numbers written to int, allows the code to work correctly later
-            stock = int(stock)
+            try:
+                price = float(price) # Converts strings to numbers, changes numbers written to int, allows the code to work correctly later
+                stock = int(stock)
+            except ValueError: #Had to implement this try + except valueerror code as if you put words into price and stock it would crash the code
+                print("Please enter a valid input, price and stock must be numbers")
+                return
 
             new_item = Items(name, price, category, stock) # Creates a new object using the items class
             self.products_list.append(new_item) # Stores all of the items added into the inventory tracker
