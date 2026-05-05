@@ -92,8 +92,8 @@ class Inventory:
                 if item.name == keyword:
                     print("Found:", item.name)
 
-            Button(self.parent, text="Search", command=search).pack()
-            Button(self.parent, text="Back", command=self.main_menu).pack()
+        Button(self.parent, text="Search", command=search).pack()
+        Button(self.parent, text="Back", command=self.main_menu).pack()
 
 
 if __name__ == "__main__":
