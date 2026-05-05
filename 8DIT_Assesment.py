@@ -117,5 +117,6 @@ if __name__ == "__main__":
     root = Tk()
     root.title("Inventory Tracker")
     app = Inventory(root)
+    root.geometry("")
     root.configure(bg='green')
     root.mainloop()
