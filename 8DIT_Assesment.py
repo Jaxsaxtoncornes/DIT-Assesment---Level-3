@@ -94,7 +94,7 @@ class Inventory:
             found = False
 
             for item in self.products_list:
-                if item.name == keyword:
+                if item.name.lower() == keyword:
                     print("Found:", item.name)
                     found = True
 
