@@ -42,6 +42,27 @@ class Inventory:
         stock_entry = Entry(self.parent)
         stock_entry.pack()
 
+        def save_item(): #save function for the products
+            name = name_entry.get()
+            price = price_entry.get()
+            category = category_entry.get()
+            stock = stock_entry.get()
+
+            if name == "" or price == "" or category == "" or stock == "": #Checks if the user didnt input in a category and will make them enter the data again
+                print("Please fill out all fields")
+                return
+
+            price = float(price) #Converts text into numnbers
+            stock = int(stock)
+
+            new_item = Item(name, price, category, stock) #creates the item
+            self.items_list.append(new_item)
+
+            print("Item Added")
+
+        
+
+
 
 if __name__ == "__main__":
     root = Tk()
