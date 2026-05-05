@@ -72,7 +72,7 @@ class Inventory:
         Label(self.parent, text="All Items").pack()
 
         for item in self.items_list:
-            text = item.name + " | $" str(item.price) + " | " + item.category + " | Stock: " + str(item.stock)
+            text = item.name + " | $" + str(item.price) + " | " + item.category + " | Stock: " + str(item.stock)
             Label(self.parent, text=text).pack()
         
         Button(self.parent, text="Back", command=self.main_menu).pack()
