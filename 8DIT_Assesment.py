@@ -1,6 +1,6 @@
 from tkinter import *
 
-class Items: #Has all the categorys for the products that will be added
+class Items: #The blueprint for each item, the item will have a name, price, category, and stock
     def __init__(self, name, price, category, stock):
         self.name = name
         self.price = price
@@ -10,20 +10,20 @@ class Items: #Has all the categorys for the products that will be added
 class Inventory:
     def __init__(self, parent):
         self.parent = parent
-        self.products_list = []
+        self.products_list = [] #Will store all items
 
-        self.main_menu()
+        self.main_menu() #When the code runs this will be the first thing to run, which dispalys the menu
 
     def clear_screen(self):
-        for widget in self.parent.winfo_children():
-            widget.destroy()
+        for widget in self.parent.winfo_children(): #returns all widgets that are on the window
+            widget.destroy() #removes the widget from the screen, allow the code to change windows/screen
 
     def main_menu(self):
-        self.clear_screen()
+        self.clear_screen() #This will clear the old screen that was last used
             
         Label(self.parent, text="Inventory Tracker", bg="green", font=("Roboto", 20, "bold")).pack(pady=10)
 
-        Button(self.parent, text="Add Item", command=self.add_item).pack()
+        Button(self.parent, text="Add Item", command=self.add_item).pack() #When one of these buttons is pressed it will run that corrosponding function
         Button(self.parent, text="View Items", command=self.view_items).pack()
         Button(self.parent, text="Search", command=self.search_screen).pack()
 
@@ -49,20 +49,20 @@ class Inventory:
         stock_entry.pack()
 
         def save_item(): #save function for the products
-            name = name_entry.get()
+            name = name_entry.get() #takes the text from and entry boxes and comes as a string, this include the numebrs
             price = price_entry.get()
             category = category_entry.get()
             stock = stock_entry.get()
 
-            if name == "" or price == "" or category == "" or stock == "": #Checks if the user didnt input in a category and will make them enter the data again
+            if name == "" or price == "" or category == "" or stock == "": #Checks if the user didnt input in a category and will make them enter the data again if data is missing
                 print("Please fill out all fields")
                 return
 
-            price = float(price) #Converts text into numnbers
+            price = float(price) #Converts strings to numbers, changes numbers written to int, allows the code to work correctly later
             stock = int(stock)
 
-            new_item = Items(name, price, category, stock) #creates the item
-            self.products_list.append(new_item)
+            new_item = Items(name, price, category, stock) #creates a new object using the items class
+            self.products_list.append(new_item) #stores all of the items added into the inventory tracker
 
             print("Item Added")
 
@@ -75,8 +75,8 @@ class Inventory:
 
         Label(self.parent, text="All Items").pack()
 
-        for item in self.products_list:
-            text = item.name + " | $" + str(item.price) + " | " + item.category + " | Stock: " + str(item.stock)
+        for item in self.products_list: #the loop goes through the stored items one by one 
+            text = item.name + " | $" + str(item.price) + " | " + item.category + " | Stock: " + str(item.stock) #this creates a string which shows all of the items info, str will convert the numbers back into text which allows for correct display
             Label(self.parent, text=text).pack()
         
         Button(self.parent, text="Back", command=self.main_menu).pack()
@@ -90,16 +90,16 @@ class Inventory:
         search_entry.pack()
 
         def search():
-            keyword = search_entry.get().lower()
-            found = False
+            keyword = search_entry.get().lower() #makes the user's entered text lower case so when searching for a item it wont matter if the user users capital letters or not
+            found = False #this is used to see if there is a match found when going through the loop
 
-            for item in self.products_list:
+            for item in self.products_list: #loops through all stored item
                 if item.name.lower() == keyword:
                     print("Found:", item.name)
-                    found = True
+                    found = True #if the user enters the product and its there, it will print the "Found:"
 
             if found == False:
-                print("No item in inventory")
+                print("No item in inventory") #if the loop doesn't match anything it will be false and print this
 
         Button(self.parent, text="Search", command=search).pack()
         Button(self.parent, text="Back", command=self.main_menu).pack()
