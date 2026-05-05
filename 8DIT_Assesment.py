@@ -88,7 +88,7 @@ class Inventory:
         def search():
             keyword = search_entry.get()
 
-            for item in self.items_list:
+            for item in self.products_list:
                 if item.name == keyword:
                     print("Found:", item.name)
 
