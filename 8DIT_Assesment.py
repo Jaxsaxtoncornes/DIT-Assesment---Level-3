@@ -69,6 +69,14 @@ class Inventory:
     def view_items(self):
         self.clear_screen()
 
+        Label(self.parent, text="All Items").pack()
+
+        for item in self.items_list:
+            text = item.name + " | $" str(item.price) + " | " + item.category + " | Stock: " + str(item.stock)
+            label(self.parent, text=text).pack()
+        
+        Button(self.parent, text="Back", command=self.main_menu).pack()
+
 
 if __name__ == "__main__":
     root = Tk()
