@@ -24,7 +24,7 @@ class Inventory:
         Label(self.parent, text="Inventory Tracker", bg="green", font=("Roboto", 20, "bold")).pack(pady=10)
 
         Button(self.parent, text="Add Item", command=self.add_item).pack()
-        #Button(self.parent, text="View Items", command=self.view_items).pack()
+        Button(self.parent, text="View Items", command=self.view_items).pack()
         #Button(self.parent, text="Search", command=self.search_screen).pack()
 
     def add_item(self):
@@ -71,7 +71,7 @@ class Inventory:
 
         Label(self.parent, text="All Items").pack()
 
-        for item in self.items_list:
+        for item in self.products_list:
             text = item.name + " | $" + str(item.price) + " | " + item.category + " | Stock: " + str(item.stock)
             Label(self.parent, text=text).pack()
         
