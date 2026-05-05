@@ -25,7 +25,7 @@ class Inventory:
 
         Button(self.parent, text="Add Item", command=self.add_item).pack()
         Button(self.parent, text="View Items", command=self.view_items).pack()
-        #Button(self.parent, text="Search", command=self.search_screen).pack()
+        Button(self.parent, text="Search", command=self.search_screen).pack()
 
     def add_item(self):
         self.clear_screen()
@@ -79,6 +79,21 @@ class Inventory:
 
     def search_screen(self):
         self.clear_screen()
+
+        Label(self.parent, text="Search For Product").pack()
+
+        search_entry = Entry(self.parent)
+        search_entry.pack()
+
+        def search():
+            keyword = search_entry.get()
+
+            for item in self.items_list:
+                if item.name == keyword:
+                    print("Found:", item.name)
+
+            Button(self.parent, text="Search", command=search).pack()
+            Button(self.parent, text="Back", command=self.main_menu).pack()
 
 
 if __name__ == "__main__":
