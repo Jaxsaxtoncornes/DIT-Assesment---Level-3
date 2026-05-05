@@ -19,6 +19,7 @@ class Inventory:
             widget.destroy()
 
     def main_menu(self):
+        self.clear_screen()
             
         Label(self.parent, text="Inventory Tracker", bg="green", font=("Roboto", 20, "bold")).pack(pady=10)
 
@@ -27,6 +28,7 @@ class Inventory:
         #Button(self.parent, text="Search", command=self.search_screen).pack()
 
     def add_item(self):
+        self.clear_screen()
 
         Label(self.parent, text="Add Item").pack()
 
@@ -63,6 +65,9 @@ class Inventory:
         Button(self.parent, text="Save Item", command=save_item).pack()
 
         Button(self.parent, text="Back", command=self.main_menu).pack()
+
+    def view_items(self):
+        self.clear_screen()
 
 
 if __name__ == "__main__":
