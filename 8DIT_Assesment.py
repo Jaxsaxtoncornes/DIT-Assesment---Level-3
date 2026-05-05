@@ -77,6 +77,9 @@ class Inventory:
         
         Button(self.parent, text="Back", command=self.main_menu).pack()
 
+    def search_screen(self):
+        self.clear_screen()
+
 
 if __name__ == "__main__":
     root = Tk()
