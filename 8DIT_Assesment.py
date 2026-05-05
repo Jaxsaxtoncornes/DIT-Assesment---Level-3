@@ -14,6 +14,10 @@ class Inventory:
 
         self.main_menu()
 
+    def clear_screen(self):
+        for widget in self.parent.winfo_children():
+            widget.destroy()
+
     def main_menu(self):
             
         Label(self.parent, text="Inventory Tracker", bg="green", font=("Roboto", 20, "bold")).pack(pady=10)
