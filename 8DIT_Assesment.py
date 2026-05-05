@@ -55,13 +55,14 @@ class Inventory:
             price = float(price) #Converts text into numnbers
             stock = int(stock)
 
-            new_item = Item(name, price, category, stock) #creates the item
-            self.items_list.append(new_item)
+            new_item = Items(name, price, category, stock) #creates the item
+            self.products_list.append(new_item)
 
             print("Item Added")
 
-        
+        Button(self.parent, text="Save Item", command=save_item).pack()
 
+        Button(self.parent, text="Back", command=self.main_menu).pack()
 
 
 if __name__ == "__main__":
